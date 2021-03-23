@@ -1,5 +1,7 @@
 #!/bin/bash
 
+conda activate /srv/conda/envs/notebook
+
 git clone https://github.com/Goddard-Fortran-Ecosystem/pFUnit.git
 cd pFUnit
 mkdir build
