@@ -1,0 +1,10 @@
+#!/bin/bash
+
+git clone https://github.com/Goddard-Fortran-Ecosystem/pFUnit.git
+cd pFUnit
+mkdir build
+cd build
+cmake ..
+make
+make tests
+make install
