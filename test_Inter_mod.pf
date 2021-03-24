@@ -1,0 +1,36 @@
+@test
+subroutine test_Inter_mod()
+   use Inter_mod
+   use funit
+  Implicit None
+  Integer:: I=2
+  Integer:: J=2
+  Integer:: K=1
+  REAL :: TEMP(2,2)
+  REAL :: LON(2)
+  REAL :: LAT(2)
+  REAL :: LONSTAT
+  REAL :: LATSTAT
+
+  TEMP(1,2)=29.
+  TEMP(2,2)=30.
+  TEMP(1,1)=31.
+  TEMP(2,1)=32.
+  LAT(2) = -31.
+  LAT(1) = -33.
+  LON(2) = 22.
+  LON(1) = 20.
+  LONSTAT = 21.
+  LATSTAT = -32.
+
+  CALL INTERP(I,J,K,TEMP,LON,LAT,LONSTAT,LATSTAT,NEW)
+  
+	!Values at 4 points: 29, 30, 31 and 32
+	!Answer: 30.5
+	!Latitude: south point: -33, north point: -31
+	!Longitude: west point: 20, east point: 22
+	!Station point: 21; -32
+
+   @assertEqual(9., square(3.), 'square(3)')
+
+end subroutine test_Inter_mod
