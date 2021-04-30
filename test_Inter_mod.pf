@@ -9,8 +9,8 @@ subroutine test_Inter_mod()
   REAL :: TEMP(2,2)
   REAL :: LON(2)
   REAL :: LAT(2)
-  REAL :: LONSTAT
-  REAL :: LATSTAT
+  REAL :: LONSTAT(1)
+  REAL :: LATSTAT(1)
 
   TEMP(1,2)=29.
   TEMP(2,2)=30.
@@ -23,14 +23,13 @@ subroutine test_Inter_mod()
   LONSTAT = 21.
   LATSTAT = -32.
 
-  CALL INTERP(I,J,K,TEMP,LON,LAT,LONSTAT,LATSTAT,NEW)
-  
+ 
 	!Values at 4 points: 29, 30, 31 and 32
 	!Answer: 30.5
 	!Latitude: south point: -33, north point: -31
 	!Longitude: west point: 20, east point: 22
 	!Station point: 21; -32
 
-   @assertEqual(9., square(3.), 'square(3)')
+   @assertEqual(30.5, INTERP(I,J,K,TEMP,LON,LAT,LONSTAT,LATSTAT), tolerance=0.25)
 
 end subroutine test_Inter_mod
