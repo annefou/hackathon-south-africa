@@ -9,7 +9,7 @@ Input files:
 - MaxTemp.txt: station latitude and longitude, date and temperature max
 - MinTemp.txt: same as MaxTemp.txt but temperature min
 
-Try it out on binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/annefou/hackathon-south-africa/HEAD)
+Try it out on binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/leeseetja/hackathon-south-africa/HEAD)
 
 - console.cloud.google.com seems to be free and we can run 
     - open console and clone repository
