@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source activate /srv/conda/envs/notebook
+
+git clone https://github.com/Goddard-Fortran-Ecosystem/pFUnit.git
+cd pFUnit
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/packages
+make
+make tests
+make install
